@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Canada Immigration Data Dashboard</title>
+  <title>Document</title>
 
   <link href="https://cdn.jsdelivr.net/npm/vuetify@3.7.3/dist/vuetify.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
@@ -19,10 +19,18 @@
   <div id="app">
     <v-app>
       <v-app-bar color="indigo-darken-3" density="comfortable" elevation="4">
+        <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
         <v-app-bar-title>Canada Immigration Data Dashboard</v-app-bar-title>
       </v-app-bar>
 
-      <v-main class="bg-grey-lighten-4">
+      <v-navigation-drawer v-model="openDrawer">
+        <v-list-item href="https://jingyi12333.github.io/codinginquiryproject4.github.io/">Home</v-list-item>
+        <v-list-item v-for="item in projects" :key="item.title" :href="item.url">
+          {{ item.title }}
+        </v-list-item>
+      </v-navigation-drawer>
+
+      <v-main >
         <v-container class="py-8">
           <v-row class="mb-4">
             <v-col cols="12">
